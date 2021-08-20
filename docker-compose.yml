@@ -1,0 +1,29 @@
+version: '3.3'
+services:
+  mysqldb:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: root
+    ports:
+      - 3306:3306
+    volumes:
+      - db-config:/etc/mysql
+      - db-data:/var/lib/mysql
+  node:
+    image: node:lts
+    working_dir: /var/www/html
+    ports:
+      - 9000:9000
+    volumes:
+      - .:/var/www/html/
+    depends_on:
+      - mysqldb
+    command: bash -c "npm install -g npm && npm install && npm start"
+    stdin_open: true
+    tty: true
+
+volumes:
+  db-config:
+  db-data:

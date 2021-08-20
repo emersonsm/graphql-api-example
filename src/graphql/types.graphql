@@ -1,0 +1,33 @@
+type Movies {
+    Id: ID!
+    Title: String!
+    Year: Int!
+    Director: String!
+    Plot: String!
+    Genres: Genres!
+}
+
+type Genres {
+    Name: String!
+}
+
+type Query {
+    movies(Title: String, Year: Int, Director: String, Plot: String): [Movies!]!
+    genres(Name: String): [Genres!]!
+}
+
+type Mutation {
+    createMovie(Title: String!, Year: Int!, Director: String!, Plot: String!): [Movies!]!
+    updateMovie(
+        Id: ID!
+        Title: String
+        Year: Int
+        Director: String
+        Plot: String
+    ): [Movies!]!
+    deleteMovie(Id: ID!): Int!
+
+    createGenre(Name: String!): [Genres!]!
+    updateGenre(Id: ID!, Name: String): [Genres!]!
+    deleteGenre(Id: ID!): Int!
+}

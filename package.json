@@ -1,0 +1,32 @@
+{
+    "name": "graphql-apollo-example",
+    "version": "1.0.0",
+    "description": "Sample API developed with Apollo GraphQL, Node.js and MySQL.",
+    "main": "src/index.mjs",
+    "scripts": {
+        "start": "nodemon",
+        "test": "node --experimental-vm-modules node_modules/.bin/jest"
+    },
+    "author": "Emerson Santiago Madruga",
+    "license": "ISC",
+    "dependencies": {
+        "apollo-server-express": "^3.0.2",
+        "bcrypt": "^5.0.1",
+        "compression": "^1.7.4",
+        "express": "^4.17.1",
+        "graphql": "^15.5.1",
+        "helmet": "^4.6.0",
+        "knex": "^0.21.20",
+        "mysql": "^2.18.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.31.0",
+        "jest": "^27.0.6",
+        "nodemon": "^2.0.12",
+        "supertest": "^6.1.5"
+    },
+    "engines": {
+        "node": ">=14.17.4",
+        "npm": ">=7.19.1"
+    }
+}
